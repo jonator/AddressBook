@@ -1,0 +1,10 @@
+C:\WS\AddressBook\AddressBook\bin\Debug\AddressBook.exe.config
+C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.csprojResolveAssemblyReference.cache
+C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.MainWindow.resources
+C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.Properties.Resources.resources
+C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.csproj.GenerateResource.Cache
+C:\WS\AddressBook\AddressBook\bin\Debug\AddressBook.exe
+C:\WS\AddressBook\AddressBook\bin\Debug\AddressBook.pdb
+C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.exe
+C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.pdb
+C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.newContactForm.resources
