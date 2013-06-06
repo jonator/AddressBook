@@ -17,7 +17,7 @@ namespace AddressBook
         {
             InitializeComponent();
             contacts = new List<Contact>();
-            contacts.Add(new Contact("ExampleFirst", "ExampleLast", new PhoneNumber(913, 555, 1024), "soccergirl99@yahoo.com"));
+            contacts.Add(new Contact("ExampleFirst", "ExampleLast", new PhoneNumber(913, 555, 1024), "exampleEmail@yahoo.com"));
         }
 
         public void AddContact(Contact newContact)
@@ -49,5 +49,6 @@ namespace AddressBook
         {
             Close();
         }
+        //comment
     }
 }
