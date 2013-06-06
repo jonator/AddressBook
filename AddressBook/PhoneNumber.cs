@@ -12,14 +12,14 @@ namespace AddressBook
         private int firstPart;
         private int secondPart;
 
-        public PhoneNumber(int areaCode, int firstPart, int secondPart)
+        public PhoneNumber(int areaCode, int firstPart, int secondPart) //constructor
         {
             this.areaCode = areaCode;
             this.firstPart = firstPart;
             this.secondPart = secondPart;
         }
 
-        public override string ToString()
+        public override string ToString() //method for making phone number into string
         {
             return areaCode.ToString() + '-' + firstPart.ToString() + '-' + secondPart.ToString();
         }

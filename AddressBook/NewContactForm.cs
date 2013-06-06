@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace AddressBook
 {
-    public partial class newContactForm : Form
+    public partial class NewContactForm : Form
     {
         private MainWindow home;
 
-        public newContactForm(MainWindow homeFormParamter)
+        public NewContactForm(MainWindow homeFormParamter)
         {
             InitializeComponent();
             home = homeFormParamter;
         }
 
-        private void closeButton_Click(object sender, EventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)//Closes the addbutton window when close button is clicked
         {
             Close();
         }

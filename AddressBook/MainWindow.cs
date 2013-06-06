@@ -12,43 +12,35 @@ namespace AddressBook
 {
     public partial class MainWindow : Form
     {
-        private List<Contact> contacts;
+        private List<Contact> virtualContactList;//makes a new list that and makes memory for <contact>
+
         public MainWindow()
         {
             InitializeComponent();
-            contacts = new List<Contact>();
-            contacts.Add(new Contact("ExampleFirst", "ExampleLast", new PhoneNumber(913, 555, 1024), "exampleEmail@yahoo.com"));
+            virtualContactList = new List<Contact>(20);//initial size of list size (20 before it multiplies)
         }
 
-        public void AddContact(Contact newContact)
+        public void AddContact(Contact newContact)//adds new contact to the virtual list
         {
-            contacts.Add(newContact);
+            virtualContactList.Add(newContact);
+
+            contactListBox.Items.Add(newContact.FirstName + " " + newContact.LastName);
         }
 
 
-        private void MainWindow_Load(object sender, EventArgs e)
+        private void MainWindow_Load(object sender, EventArgs e)//calls this method after the MainWindow(); loads/is drawn
         {
-            PutAllContactsIntoForm();
         }
 
-        private void PutAllContactsIntoForm()
+        private void addButton_Click(object sender, EventArgs e)//happens when add_button is clicked
         {
-            foreach (Contact contact in contacts)
-            {
-                contactListBox.Items.Add(contact.FirstName + " " + contact.LastName);
-            } 
-        }
-
-        private void addButton_Click(object sender, EventArgs e)
-        {
-            newContactForm form = new newContactForm(this);
+            NewContactForm form = new NewContactForm(this);
             form.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//closes the form when the close button is clicked
         {
             Close();
         }
-        //comment
     }
 }

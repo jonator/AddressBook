@@ -1,6 +1,6 @@
 ﻿namespace AddressBook
 {
-    partial class newContactForm
+    partial class NewContactForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newContactForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewContactForm));
             this.firstNameTextbox = new System.Windows.Forms.TextBox();
             this.lastNameTextbox = new System.Windows.Forms.TextBox();
             this.firstNameLabel = new System.Windows.Forms.Label();

@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddButton.cs">
+    <Compile Include="NewContactForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddButton.Designer.cs">
-      <DependentUpon>AddButton.cs</DependentUpon>
+    <Compile Include="NewContactForm.Designer.cs">
+      <DependentUpon>NewContactForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Contact.cs" />
     <Compile Include="MainWindow.cs">
@@ -60,8 +60,8 @@
     <Compile Include="PhoneNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddButton.resx">
-      <DependentUpon>AddButton.cs</DependentUpon>
+    <EmbeddedResource Include="NewContactForm.resx">
+      <DependentUpon>NewContactForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
