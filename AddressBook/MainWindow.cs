@@ -57,7 +57,7 @@ namespace AddressBook
 
         private void listBoxDoubleClick_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show("double click detected");
+            int 
         }
     }
 }

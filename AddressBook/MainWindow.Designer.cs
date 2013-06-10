@@ -33,6 +33,7 @@
             this.addButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.contactNumberLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // contactListBox
@@ -42,7 +43,6 @@
             this.contactListBox.Name = "contactListBox";
             this.contactListBox.Size = new System.Drawing.Size(383, 251);
             this.contactListBox.TabIndex = 0;
-            this.contactListBox.DoubleClick += this.listBoxDoubleClick_DoubleClick;
             // 
             // addButton
             // 
@@ -75,11 +75,21 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // contactNumberLabel
+            // 
+            this.contactNumberLabel.AutoSize = true;
+            this.contactNumberLabel.Location = new System.Drawing.Point(401, 224);
+            this.contactNumberLabel.Name = "contactNumberLabel";
+            this.contactNumberLabel.Size = new System.Drawing.Size(106, 13);
+            this.contactNumberLabel.TabIndex = 4;
+            this.contactNumberLabel.Text = "{number of contacts}";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 271);
+            this.ClientSize = new System.Drawing.Size(510, 272);
+            this.Controls.Add(this.contactNumberLabel);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.addButton);
@@ -91,6 +101,7 @@
             this.Text = "Address Book";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,6 +111,7 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Label contactNumberLabel;
 
 
     }

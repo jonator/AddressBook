@@ -22,5 +22,15 @@ namespace AddressBook
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)//Closes the contact view window
+        {
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
