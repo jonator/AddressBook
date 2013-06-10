@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContactViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactViewer.Designer.cs">
+      <DependentUpon>ContactViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewContactForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="PhoneNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ContactViewer.resx">
+      <DependentUpon>ContactViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewContactForm.resx">
       <DependentUpon>NewContactForm.cs</DependentUpon>
     </EmbeddedResource>

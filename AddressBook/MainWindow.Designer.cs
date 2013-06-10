@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.contactListBox = new System.Windows.Forms.ListBox();
             this.addButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // contactListBox
@@ -41,6 +42,7 @@
             this.contactListBox.Name = "contactListBox";
             this.contactListBox.Size = new System.Drawing.Size(383, 251);
             this.contactListBox.TabIndex = 0;
+            this.contactListBox.DoubleClick += this.listBoxDoubleClick_DoubleClick;
             // 
             // addButton
             // 
@@ -53,22 +55,33 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // button1
+            // closeButton
             // 
-            this.button1.Location = new System.Drawing.Point(402, 240);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.closeButton.Location = new System.Drawing.Point(402, 240);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(101, 23);
+            this.closeButton.TabIndex = 2;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(401, 42);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(102, 23);
+            this.deleteButton.TabIndex = 3;
+            this.deleteButton.Text = "Delete Contact";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 271);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.contactListBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -85,7 +98,8 @@
 
         private System.Windows.Forms.ListBox contactListBox;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button deleteButton;
 
 
     }
