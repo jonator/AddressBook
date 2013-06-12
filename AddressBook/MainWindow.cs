@@ -20,16 +20,33 @@ namespace AddressBook
             virtualContactList = new List<Contact>(20);//initial size of list (20 before it multiplies)
         }
 
+        private void UpdateContactNumberLabel()//Method that updates the contactNumberLabel
+        {
+            int count = virtualContactList.Count;//Looks for the number of contacts in virtualContactList
+
+            if (count == 1)
+            {
+                contactNumberLabel.Text = count + " contact";
+            }
+            else
+            {
+                contactNumberLabel.Text = count + " contacts";
+            }
+        }
+
         public void AddContact(Contact newContact)//adds new contact to the virtual list
         {
             virtualContactList.Add(newContact);
 
-            contactListBox.Items.Add(newContact.FirstName + " " + newContact.LastName);
+            contactListBox.Items.Add(newContact.FirstName + " " + newContact.LastName);//Adds to the listbox
+
+            UpdateContactNumberLabel();//Takes another look at how many contacts there are
         }
 
 
         private void MainWindow_Load(object sender, EventArgs e)//calls this method after the MainWindow(); loads/is drawn
         {
+            UpdateContactNumberLabel();//Takes another look at how many contacts there are
         }
 
         private void addButton_Click(object sender, EventArgs e)//happens when add_button is clicked
@@ -56,6 +73,7 @@ namespace AddressBook
 
             virtualContactList.RemoveAt(selectedIndex);//deleting the item in the virtual list
 
+            UpdateContactNumberLabel(); //Takes another look at how many contacts there are
         }
 
         private void listBoxDoubleClick_DoubleClick(object sender, EventArgs e)
