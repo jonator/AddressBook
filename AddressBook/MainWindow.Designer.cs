@@ -43,6 +43,7 @@
             this.contactListBox.Name = "contactListBox";
             this.contactListBox.Size = new System.Drawing.Size(383, 251);
             this.contactListBox.TabIndex = 0;
+            this.contactListBox.DoubleClick += listBoxDoubleClick_DoubleClick;
             // 
             // addButton
             // 

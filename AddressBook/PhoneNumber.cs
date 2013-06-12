@@ -19,7 +19,7 @@ namespace AddressBook
             this.secondPart = secondPart;
         }
 
-        public override string ToString() //method for making phone number into string
+        public override string ToString() //method for making phone number into string (its called ToString)
         {
             return areaCode.ToString() + '-' + firstPart.ToString() + '-' + secondPart.ToString();
         }
