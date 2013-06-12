@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(239, 132);
+            this.ClientSize = new System.Drawing.Size(239, 127);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.emailLabel);
@@ -116,6 +116,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.introLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ContactViewer";
             this.Text = "ContactViewer";
             this.Load += new System.EventHandler(this.ContactViewer_Load);

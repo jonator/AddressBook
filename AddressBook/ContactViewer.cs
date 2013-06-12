@@ -28,7 +28,7 @@ namespace AddressBook
             Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//(Edit this contact button) opens the contact editor (make later
         {
 
         }
