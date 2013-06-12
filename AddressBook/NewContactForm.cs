@@ -27,7 +27,7 @@ namespace AddressBook
 
         private void addContactButton_Click(object sender, EventArgs e)
         {
-            if (HasAnyEmpty())//Checks for missing info (is a bool method below)
+            if (HasAnyEmpty())//Checks for missing info (HasAnyEmpty is a bool method below)
             {
                 MessageBox.Show("Missing information.");//Tells user about missing info
                 return;//Leaves the method to check again
@@ -40,7 +40,7 @@ namespace AddressBook
         private bool HasAnyEmpty()
         {
             return firstNameTextbox.Text == string.Empty || lastNameTextbox.Text == string.Empty || firstPartTextbox.Text == string.Empty || secondPartTextbox.Text == string.Empty || emailTextbox.Text == string.Empty;
-        }////////////////////////////This^ (double =) only checks for whether or not it is the case -- it does not set it equal to
+        }////////////////////////////This^ (double =) only checks for whether or not it is the case -- it does not set it equal to (mini if then statement)
 
         public void WriteNewContact()
         {

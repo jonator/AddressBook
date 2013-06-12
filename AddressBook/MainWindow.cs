@@ -53,11 +53,14 @@ namespace AddressBook
 
             int selectedIndex = contactListBox.SelectedIndex;//getting the selected variable as an int
             contactListBox.Items.RemoveAt(selectedIndex);//deleting the item that is selected
+
+            virtualContactList.RemoveAt(selectedIndex);//deleting the item in the virtual list
+
         }
 
         private void listBoxDoubleClick_DoubleClick(object sender, EventArgs e)
         {
-            
+            contactListBox.SelectedIndex
         }
     }
 }

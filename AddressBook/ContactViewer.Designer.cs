@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContactViewer));
-            this.introLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.phoneNumberLabel = new System.Windows.Forms.Label();
@@ -37,15 +36,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // introLabel
-            // 
-            this.introLabel.AutoSize = true;
-            this.introLabel.Location = new System.Drawing.Point(12, 9);
-            this.introLabel.Name = "introLabel";
-            this.introLabel.Size = new System.Drawing.Size(91, 13);
-            this.introLabel.TabIndex = 0;
-            this.introLabel.Text = "Selected contact:";
             // 
             // label1
             // 
@@ -95,7 +85,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(129, 96);
+            this.button2.Location = new System.Drawing.Point(128, 97);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 23);
             this.button2.TabIndex = 6;
@@ -114,7 +104,6 @@
             this.Controls.Add(this.phoneNumberLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.introLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ContactViewer";
@@ -127,7 +116,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label introLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label phoneNumberLabel;
