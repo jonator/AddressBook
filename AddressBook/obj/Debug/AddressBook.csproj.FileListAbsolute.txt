@@ -9,3 +9,4 @@ C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.exe
 C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.pdb
 C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.newContactForm.resources
 C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.ContactViewer.resources
+C:\WS\AddressBook\AddressBook\obj\Debug\AddressBook.EditExistingContactWindow.resources

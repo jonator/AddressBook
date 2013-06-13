@@ -80,9 +80,18 @@ namespace AddressBook
         {
             int index = contactListBox.SelectedIndex;
 
-            Contact toView = virtualContactList[index];//Contact toView = the item in the virtual list at index; virtualContactList[index] pulls out the contact info that is tied to the contactListBox because of the [ ]
-            ContactViewer form = new ContactViewer(toView);
-            form.Show();
+            if (index == -1)
+            {
+                return;
+            }
+            else
+            {
+                Contact toView = virtualContactList[index];//Contact toView = the item in the virtual list at index; virtualContactList[index] pulls out the contact info that is tied to the contactListBox because of the [ ]
+                ContactViewer form = new ContactViewer(toView);
+                form.Show();
+            }
+
+            
         }
     }
 }
