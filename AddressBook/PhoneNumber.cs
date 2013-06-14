@@ -24,5 +24,8 @@ namespace AddressBook
             return areaCode.ToString() + '-' + firstPart.ToString() + '-' + secondPart.ToString();
         }
 
+        public int AreaCode { get { return areaCode; } }
+        public int FirstPart { get { return firstPart; } }
+        public int SecondPart { get { return secondPart; } }
     }
 }

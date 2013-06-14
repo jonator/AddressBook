@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditExistingContactWindow));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,7 +37,7 @@
             this.secondPartEditTextBox = new System.Windows.Forms.TextBox();
             this.emailEditTextbox = new System.Windows.Forms.TextBox();
             this.lastNameEditTextbox = new System.Windows.Forms.TextBox();
-            this.firstPartEditTextbox = new System.Windows.Forms.TextBox();
+            this.firstPartEditTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -106,12 +107,12 @@
             this.lastNameEditTextbox.Size = new System.Drawing.Size(184, 20);
             this.lastNameEditTextbox.TabIndex = 9;
             // 
-            // firstPartEditTextbox
+            // firstPartEditTextBox
             // 
-            this.firstPartEditTextbox.Location = new System.Drawing.Point(189, 62);
-            this.firstPartEditTextbox.Name = "firstPartEditTextbox";
-            this.firstPartEditTextbox.Size = new System.Drawing.Size(40, 20);
-            this.firstPartEditTextbox.TabIndex = 10;
+            this.firstPartEditTextBox.Location = new System.Drawing.Point(189, 62);
+            this.firstPartEditTextBox.Name = "firstPartEditTextBox";
+            this.firstPartEditTextBox.Size = new System.Drawing.Size(40, 20);
+            this.firstPartEditTextBox.TabIndex = 10;
             // 
             // label5
             // 
@@ -142,12 +143,13 @@
             // 
             // closeEditContactForm
             // 
-            this.closeEditContactForm.Location = new System.Drawing.Point(218, 113);
+            this.closeEditContactForm.Location = new System.Drawing.Point(218, 114);
             this.closeEditContactForm.Name = "closeEditContactForm";
             this.closeEditContactForm.Size = new System.Drawing.Size(93, 23);
             this.closeEditContactForm.TabIndex = 14;
             this.closeEditContactForm.Text = "Close";
             this.closeEditContactForm.UseVisualStyleBackColor = true;
+            this.closeEditContactForm.Click += new System.EventHandler(this.closeEditContactForm_Click);
             // 
             // editExistingContactButton
             // 
@@ -155,9 +157,10 @@
             this.editExistingContactButton.Name = "editExistingContactButton";
             this.editExistingContactButton.Size = new System.Drawing.Size(200, 23);
             this.editExistingContactButton.TabIndex = 15;
-            this.editExistingContactButton.Text = "Edit Existing Contact";
+            this.editExistingContactButton.Text = "Save Changes";
             this.editExistingContactButton.UseMnemonic = false;
             this.editExistingContactButton.UseVisualStyleBackColor = true;
+            this.editExistingContactButton.Click += new System.EventHandler(this.editExistingContactButton_Click);
             // 
             // EditExistingContactWindow
             // 
@@ -169,7 +172,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.firstPartEditTextbox);
+            this.Controls.Add(this.firstPartEditTextBox);
             this.Controls.Add(this.lastNameEditTextbox);
             this.Controls.Add(this.emailEditTextbox);
             this.Controls.Add(this.secondPartEditTextBox);
@@ -178,6 +181,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "EditExistingContactWindow";
             this.Text = "Edit Contact";
@@ -197,7 +202,7 @@
         private System.Windows.Forms.TextBox secondPartEditTextBox;
         private System.Windows.Forms.TextBox emailEditTextbox;
         private System.Windows.Forms.TextBox lastNameEditTextbox;
-        private System.Windows.Forms.TextBox firstPartEditTextbox;
+        private System.Windows.Forms.TextBox firstPartEditTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;

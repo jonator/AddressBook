@@ -48,7 +48,7 @@
             // addButton
             // 
             this.addButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.addButton.Location = new System.Drawing.Point(402, 13);
+            this.addButton.Location = new System.Drawing.Point(402, 12);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(101, 23);
             this.addButton.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(401, 42);
+            this.deleteButton.Location = new System.Drawing.Point(401, 41);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(102, 23);
             this.deleteButton.TabIndex = 3;
@@ -95,6 +95,7 @@
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.contactListBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

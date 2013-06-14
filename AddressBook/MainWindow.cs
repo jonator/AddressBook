@@ -51,8 +51,8 @@ namespace AddressBook
 
         private void addButton_Click(object sender, EventArgs e)//happens when add_button is clicked
         {
-            NewContactForm form = new NewContactForm(this);
-            form.Show();
+            NewContactForm form = new NewContactForm(this);//
+            form.ShowDialog();//Pauses the code unlike show
         }
 
         private void button1_Click(object sender, EventArgs e)//closes the form when the close button is clicked
@@ -80,18 +80,25 @@ namespace AddressBook
         {
             int index = contactListBox.SelectedIndex;
 
-            if (index == -1)
+            if (virtualContactList.Count == 0 || index == -1)
             {
                 return;
             }
-            else
-            {
-                Contact toView = virtualContactList[index];//Contact toView = the item in the virtual list at index; virtualContactList[index] pulls out the contact info that is tied to the contactListBox because of the [ ]
-                ContactViewer form = new ContactViewer(toView);
-                form.Show();
-            }
 
-            
+            Contact toView = virtualContactList[index];//Contact toView = the item in the virtual list at index; virtualContactList[index] pulls out the contact info that is tied to the contactListBox because of the [ ]
+            ContactViewer form = new ContactViewer(toView);
+            form.ShowDialog();
+            refreshListBox();//calls the refrestListBox method below upon a double click
+        }
+
+        private void refreshListBox()
+        {
+            contactListBox.Items.Clear();
+
+            foreach (Contact c in virtualContactList)//makes sure the virtualContactList is the same as what first and last name appears in the contactListBox
+            {
+                contactListBox.Items.Add(c.FirstName + " " + c.LastName);
+            }
         }
     }
 }
