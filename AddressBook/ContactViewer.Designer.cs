@@ -79,7 +79,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(13, 97);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 23);
+            this.button1.Size = new System.Drawing.Size(164, 23);
             this.button1.TabIndex = 5;
             this.button1.Text = "Edit This Contact";
             this.button1.UseVisualStyleBackColor = true;
@@ -87,9 +87,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(128, 97);
+            this.button2.Location = new System.Drawing.Point(183, 97);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 23);
+            this.button2.Size = new System.Drawing.Size(127, 23);
             this.button2.TabIndex = 6;
             this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(213, 78);
+            this.groupBox1.Size = new System.Drawing.Size(297, 78);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selected Contact:";
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(237, 128);
+            this.ClientSize = new System.Drawing.Size(318, 127);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

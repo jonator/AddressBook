@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AddressBook
 {
@@ -46,7 +48,35 @@ namespace AddressBook
 
         private void MainWindow_Load(object sender, EventArgs e)//calls this method after the MainWindow(); loads/is drawn
         {
+            string open = File.ReadAllText("saved.xml");
+
+            XElement parsed = XElement.Parse(open);
+
+            foreach (XElement child in parsed.Elements("contact"))
+            {
+                string savedFirstName = child.Element("firstName").Value;
+                string savedLastName = child.Element("lastName").Value;
+                string savedAreaCode = child.Element("PhoneNumber").Element("areaCode").Value;
+                string savedFirstPart = child.Element("PhoneNumber").Element("firstPart").Value;
+                string savedSecondPart = child.Element("PhoneNumber").Element("secondPart").Value;
+                PhoneNumber savedPhoneNumber = new PhoneNumber(int.Parse(savedAreaCode), int.Parse(savedFirstPart), int.Parse(savedSecondPart));
+                string savedEmail = child.Element("email").Value;
+
+                virtualContactList.Add(new Contact(savedFirstName, savedLastName, savedPhoneNumber, savedEmail));
+
+
+            }
+            
+            DisplayVirtualListInBox();
+
             UpdateContactNumberLabel();//Takes another look at how many contacts there are
+        }
+        private void DisplayVirtualListInBox()
+        {
+            foreach (Contact c in virtualContactList)
+            {
+                contactListBox.Items.Add(c.FirstName + " " + c.LastName);
+            }
         }
 
         private void addButton_Click(object sender, EventArgs e)//happens when add_button is clicked
@@ -73,22 +103,7 @@ namespace AddressBook
 
             virtualContactList.RemoveAt(selectedIndex);//deleting the item in the virtual list
 
-            UpdateContactNumberLabel(); //Takes another look at how many contacts there are
-        }
-
-        private void listBoxDoubleClick_DoubleClick(object sender, EventArgs e)
-        {
-            int index = contactListBox.SelectedIndex;
-
-            if (virtualContactList.Count == 0 || index == -1)
-            {
-                return;
-            }
-
-            Contact toView = virtualContactList[index];//Contact toView = the item in the virtual list at index; virtualContactList[index] pulls out the contact info that is tied to the contactListBox because of the [ ]
-            ContactViewer form = new ContactViewer(toView);
-            form.ShowDialog();
-            refreshListBox();//calls the refrestListBox method below upon a double click
+            UpdateContactNumberLabel();//Takes another look at how many contacts there are to add to the counter
         }
 
         private void refreshListBox()
@@ -99,6 +114,65 @@ namespace AddressBook
             {
                 contactListBox.Items.Add(c.FirstName + " " + c.LastName);
             }
+        }
+
+        private void editContactButton_Click(object sender, EventArgs e)
+        {
+            int mainIndex = contactListBox.SelectedIndex;
+
+            if (mainIndex == -1)
+            {
+                MessageBox.Show("No contacts selected.");//show message to tell user nothing is selected
+                return;//returning early so that it does not try to delete nothing
+            }
+
+            Contact toEdit = virtualContactList[mainIndex];
+            EditExistingContactWindow form = new EditExistingContactWindow(toEdit);
+
+            form.ShowDialog();
+
+            refreshListBox();
+        }
+
+        private void contactListBox_DoubleClick(object sender, EventArgs e)
+        {
+            int index = contactListBox.SelectedIndex;
+
+            if (virtualContactList.Count == 0 || index == -1)
+            {
+                return;
+            }
+
+            Contact toView = virtualContactList[index];//Contact toView = the item in the virtual list at index; virtualContactList[index] pulls out the contact info that is tied to the contactListBox because of the [ ]
+            ContactViewer form = new ContactViewer(toView);
+
+            form.ShowDialog();
+
+            refreshListBox();//calls the refrestListBox method below upon a double click
+        }
+
+        private void contactSaver(object sender, EventArgs e)
+        {
+
+            XElement xml = new XElement("contacts");//saves the contact information as an xml file in saved.xml
+
+            foreach (Contact c in virtualContactList)
+            {
+                XElement contactElement = new XElement(//XElement is the way to write xml in C#
+                    "contact",
+                    new XElement("firstName", c.FirstName),
+                    new XElement("lastName", c.LastName),
+                    new XElement("PhoneNumber",
+                        new XElement("areaCode", c.PhoneNumber.AreaCode),
+                        new XElement("firstPart", c.PhoneNumber.FirstPart),
+                        new XElement("secondPart", c.PhoneNumber.SecondPart)),
+                    new XElement("email", c.Email)
+                );
+
+                xml.Add(contactElement);
+            }
+
+            File.WriteAllText("saved.xml", xml.ToString());       
         }
     }
 }
